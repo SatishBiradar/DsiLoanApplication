@@ -1,0 +1,38 @@
+<div class="panel panel-primary">
+        <div class="panel-heading">
+            {{pageTitle}}
+        </div>
+            <div class='panel-body'>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" [(ngModel)]='firstName' placeholder='Sam' autofocus/>
+                </div>
+                <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" [(ngModel)]='lastName' placeholder='Smith'/>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" [(ngModel)]='age' placeholder='45'min="1" max="105"/>
+                </div>                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" [(ngModel)]='email' placeholder='example@email.com'/>
+                </div>                
+                <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" class="form-control" [(ngModel)]='amount' placeholder='1000'/>
+                </div>                
+                <div class="form-group">
+                    <button class="btn btn-primary" (click)='makeApplication()'>
+                        Submit
+                    </button>
+                    <button class="btn btn-primary" (click)='clearScreen()'>
+                        Clear
+                    </button>
+                </div>
+                <section class="row" *ngIf="errorMessage">
+                    {{errorMessage}}
+                </section> 
+        </div>
+    </div>

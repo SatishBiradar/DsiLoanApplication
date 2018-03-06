@@ -1,0 +1,32 @@
+<div class="panel panel-primary"  >
+    <div class="panel-heading" >
+       {{pageTitle}}
+    </div>
+    <div class="panel-body"  >
+        <div class="table-responsive">
+            <table class='table' *ngIf='acceptedApplications && acceptedApplications.length'>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let application of acceptedApplications'>
+                            <td align='left'>{{application.FirstName}}</td>
+                            <td align='left'>{{application.LastName}}</td>
+                            <td align='left'>{{application.Age}}</td>
+                            <td align='left'>{{application.Email}}</td>
+                            <td align='left'>{{application.Amount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="container">
+                <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+            </div>
+        </div>
+    </div>
+</div>
